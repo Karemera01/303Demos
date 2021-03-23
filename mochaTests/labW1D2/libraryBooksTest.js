@@ -39,7 +39,7 @@ describe("library", function () {
     });
 
     it("find ids", function () {
-        assert.deepStrictEqual(findIDs(), authors);
+        assert.deepStrictEqual(findIDs(), ids);
     });
 
     it("add book", function () {
