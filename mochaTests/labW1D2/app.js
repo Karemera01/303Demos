@@ -30,6 +30,7 @@ function showTitles() {
  */
 function findTitles() {
     let titles = [];
+    titles = ["Mockingjay: The Final Book of The Hunger Games", "The Road Ahead", "Walter Isaacson"];  //FIX THIS!!
     // implement this and other functions
     return titles;
 }
