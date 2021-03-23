@@ -97,9 +97,9 @@ scoreExams(studentAnswers, correctAnswers)); --> [2, 2, 2]
 Arrays have a reverse method that changes the array by inverting the order in which its elements appear. For this exercise, write two functions, reverseArray and reverseArrayInPlace. The first, reverseArray, takes an array as argument and produces a new array that has the same elements in the inverse order. The second, reverseArrayInPlace, does what the reverse method does: it modifies the array given as argument by reversing its elements. Neither may use the standard reverse method. 
 */
 describe("score exam", function () {
-    const studentAnswers = [[1, 1, 2], [2, 1, 2], [3, 1, 3]];
-    const correctAnswers = [3, 1, 2];
+    const studentAnswers = [[1, 1, 2,4], [2, 1, 2,2], [3, 1, 3,4]];
+    const correctAnswers = [3, 1, 2,4];
     it("exam with 3 students", function () {
-        assert.deepEqual(scoreExams(studentAnswers, correctAnswers), [2, 2, 2]);
+        assert.deepEqual(scoreExams(studentAnswers, correctAnswers), [3,2,3]);
     });
 });
