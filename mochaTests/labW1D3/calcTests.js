@@ -1,5 +1,9 @@
 "use strict";
 
+const assert = require("assert");  //always need this with node
+const myExports = require("./app.js");  //with node need the name of your file with your functions here
+const Calculator = myExports.Calculator;  //do this for all of the functions used in the Mocha tests
+
 /* global assert Calculator */
 
 

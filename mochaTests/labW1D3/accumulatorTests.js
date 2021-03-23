@@ -1,5 +1,10 @@
 "use strict";
 /* global assert Accumulator */
+/* */
+const assert = require("assert");  //always need this with node
+const myExports = require("./app.js");  //with node need the name of your file with your functions here
+const Accumulator = myExports.Accumulator;  //do this for all of the functions used in the Mocha tests
+
 
 /*
 Write a constructor function Accumulator(initialValue, increment).  The object it creates should:
