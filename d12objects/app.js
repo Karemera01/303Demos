@@ -30,9 +30,9 @@ function showTitles() {
  * @returns {undefined}
  */
 function addBrowserBook() {
-    const authorTxtbox = document.getElementById("title");
-    const author = authorTxtbox.value;
-    const newBrowserBook = { author: author, title: "foo", id: "123" };
+    const titleTxtbox = document.getElementById("title");
+    const title = titleTxtbox.value;
+    const newBrowserBook = { author: "sam", title: title, id: "123" };
     addBook(newBrowserBook);
     return;
 }
@@ -46,10 +46,10 @@ function findTitles() {
     for (const book of library){
         titles.push(book.title);
     }
-    titles.sort();
+    const sorted = titles.sort();
    // titles = ["Mockingjay: The Final Book of The Hunger Games", "The Road Ahead", "Walter Isaacson"];  //FIX THIS!!
     // implement this and other functions
-    return titles;
+    return sorted;
 }
 
 /**
@@ -80,11 +80,13 @@ function addBook(book) {
  * @param {string} bookId  is book title
  * @returns {Object} the new book
  */
-function makeBook(author, title, bookId) {
-    const newBook = {
-        author: author,
-        title: title,
-        bookId: bookId
-    };
-    return newBook;
-}
+// function makeBook(author, title, bookId) {
+//     const newBook = {
+//         author: author,
+//         title: title,
+//         bookId: bookId
+//     };
+//     return newBook;
+// }
+
+showTitles();
