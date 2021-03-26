@@ -1,8 +1,16 @@
 "use strict";
-/* global require */
-const methods = require("./methods.js");
-const assert = require("assert");
+/* global assert    */
+/* comment out the node specific code when going to the browser*/
+const assert = require("assert");  //always need this with node
+const myExports = require("./methods.js");  //with node need the name of your file with your functions here
+const groupById = myExports.groupById;  //do this for all of the functions used in the Mocha tests
+const unique = myExports.unique;
+const filterRangeInPlace = myExports.filterRangeInPlace;
+const filterRange = myExports.filterRange;
+const Calculator = myExports.Calculator;
 
+
+    
 
 /*
 Write a function filterRange(arr, a, b) that gets an array arr, looks for elements with values higher or equal to a and lower or equal to b and return a result as an array.
@@ -12,13 +20,13 @@ The function should not modify the array. It should return the new array.
 describe("filterRange", function () {
     it("returns the filtered values", function () {
         let arr = [5, 3, 8, 1];
-        let filtered = methods.filterRange(arr, 1, 4);
+        let filtered = filterRange(arr, 1, 4);
         assert.deepEqual(filtered, [3, 1]);
     });
 
     it("doesn't change the array", function () {
         let arr = [5, 3, 8, 1];
-        let filtered = methods.filterRange(arr, 1, 4);
+        let filtered = filterRange(arr, 1, 4);
         assert.deepEqual(arr, [5, 3, 8, 1]);
     });
 });
@@ -31,12 +39,12 @@ The function should only modify the array. It should not return anything.
 describe("filterRangeInPlace", function () {
     it("returns the filtered values", function () {
         let arr = [5, 3, 8, 1];
-        methods.filterRangeInPlace(arr, 1, 4);
+        filterRangeInPlace(arr, 1, 4);
         assert.deepEqual(arr, [3, 1]);
     });
 
     it("doesn't return anything", function () {
-        assert.isUndefined(methods.filterRangeInPlace([1, 2, 3], 1, 4));
+        assert.equal(filterRangeInPlace([1, 2, 3], 1, 4), undefined);
     });
 });
 
@@ -49,7 +57,7 @@ describe("Calculator", function () {
     let calculator;
 
     before(function () {
-        calculator = new methods.Calculator();
+        calculator = new Calculator();
     });
 
     it("calculate(12 + 34) = 46", function () {
@@ -76,7 +84,7 @@ describe("unique", function () {
     let strings = ["Hare", "Krishna", "Hare", "Krishna",
         "Krishna", "Krishna", "Hare", "Hare", ":-O"];
     it("tests unique hare krishnas", function () {
-        assert.deepStrictEqual(methods.unique(strings), ["Hare", "Krishna", ":-O"]);
+        assert.deepEqual(unique(strings), ["Hare", "Krishna", ":-O"]);
     });
 });
 
@@ -98,7 +106,7 @@ describe("groupById", function() {
         {id: 'pete', name: "Pete Peterson", age: 31},
       ];
   
-      assert.deepStrictEqual(methods.groupById(users), {
+      assert.deepEqual(groupById(users), {
         john: {id: 'john', name: "John Smith", age: 20},
         ann: {id: 'ann', name: "Ann Smith", age: 24},
         pete: {id: 'pete', name: "Pete Peterson", age: 31},
@@ -106,7 +114,7 @@ describe("groupById", function() {
     });
   
     it("works with an empty array", function() {
-      users = [];
-      assert.deepStrictEqual(methods.groupById(users), {});
+      const users = [];
+      assert.deepEqual(groupById(users), {});
     });
   });
