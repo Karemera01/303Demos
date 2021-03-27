@@ -21,7 +21,7 @@ function decreasingNumeric(a, b) {
 function decreasingLex(a, b) {
     a = "" + a;
     b = "" + b;
-    if (a < b) return 1;
+    if (a < b) return 1;  //greater goes to the right
     if (a == b) return 0;
     if (a > b) return -1;
 }
