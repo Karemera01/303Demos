@@ -1,6 +1,6 @@
 "use strict";
-/* global require */
-/* eslint-disable quotes */  
+ /* global assert topSalary  getDateAgo   getLocalDay getWeekday    formatDate getLastDayOfMonth */
+/* eslint-disable quotes   */  
 
 /* comment out the node specific code when going to the browser
 const assert = require("assert");
