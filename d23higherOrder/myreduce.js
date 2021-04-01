@@ -14,7 +14,7 @@ const arr = [1, 2, 3, 4, 5];
 function myMap(arr, cbk) {
     const newArray = [];
     for (let i = 0; i < arr.length; i++) {
-        newArray.push(cbk(arr[i], i));
+        newArray.push(cbk(arr[i], i, arr));
     }
     return newArray;
 }
@@ -39,7 +39,11 @@ console.log("expect [1, 4, 9, 16, 25] ", myMap(arr, squareFun));
  * return value of cbk becomes accumulator for next loop
  */
 function myReduce(arr, cbk, initialVal) {
-    //IMPLEMENTATION NEEDED
+    let accumulator = initialVal;
+    for (const element of arr){
+        accumulator = cbk(accumulator, element);
+    }
+    return accumulator;
 }
 
 const sumFun = (accum, val) => accum + val;

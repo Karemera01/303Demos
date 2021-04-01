@@ -4,11 +4,11 @@
 /**
  * @returns {undefined}
  */
-function sayHi() {
-    this.lat = 41.00;
-    this.long = -92.96;
+function setLatLong() {
+    lat = 41.00;
+    long = -92.96;
     console.log(this);
   }
 
-  sayHi(); // undefined
+  setLatLong(); // undefined
   console.log(lat);

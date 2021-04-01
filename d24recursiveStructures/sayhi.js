@@ -15,7 +15,8 @@ const Manager = {
    * @returns {undefined} 
    */
   function sayHi() {
-     //IMPLEMENT THIS
+     const name = this.name;
+     console.log("My name is: ", name);
   }
   
   // add sayHi function to both objects
@@ -24,4 +25,3 @@ const Manager = {
   
   Manager.sayHi(); // Hello, my name is John. I am 27.  My job is Software Engineer.'
   Intern.sayHi(); // Hello, my name is Ben.  I am 21.  My job is Software Engineer Intern.'
-  
