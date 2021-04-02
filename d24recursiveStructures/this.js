@@ -1,12 +1,12 @@
-//"use strict";  
+"use strict";  
 /* eslint-disable */
 
 /**
  * @returns {undefined}
  */
 function setLatLong() {
-    lat = 41.00;
-    long = -92.96;
+    this.lat = 41.00;
+    this.long = -92.96;
     console.log(this);
   }
 
