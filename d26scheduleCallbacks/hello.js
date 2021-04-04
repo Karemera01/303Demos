@@ -1,11 +1,11 @@
-//"use strict";
+"use strict";
 
 /* eslint-disable */
 
 let phrase = "Hello";
 if (true) {
   let user = "John";
-  let sayHi = function() {
+  function sayHi() {
     console.log(`${phrase}, ${user}`);
   }
 }
