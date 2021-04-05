@@ -1,14 +1,17 @@
 "use strict";
-/* global require */
-/* eslint-disable */
-const assert = require("assert");
-const dec = require("./decorator.js");
+/* You need the assert and function name declarations to test in node.  
+Comment these out when you send it to the browser with the index.html mocha setup page.  */
+
+const assert = require("assert");  //always need this with node
+const myExports = require("./decorator.js");  //with node need the name of your file with your functions here
+const spy = myExports.spy;  //do this for all of the functions used in the Mocha tests
+
 
 describe("spy", function() {
     it("records calls into its property", function() {
       function work() {}
   
-      work = dec.spy(work);
+      work = spy(work);
       assert.deepEqual(work.calls, []);
   
       work(1, 2);
@@ -27,7 +30,7 @@ describe("spy", function() {
   
       let sum = (a, b) => a + b;
   
-      let wrappedSum = dec.spy(sum);
+      let wrappedSum = spy(sum);
   
       assert.equal(wrappedSum(1, 2), 3);
       assert.deepEqual(wrappedSum.calls, [ [1,2]]);
@@ -40,7 +43,7 @@ describe("spy", function() {
         sum: (a, b) => a + b
       };
   
-      calc.wrappedSum = dec.spy(calc.sum);
+      calc.wrappedSum = spy(calc.sum);
   
       assert.equal(calc.wrappedSum(1, 2), 3);
       assert.deepEqual(calc.wrappedSum.calls, [ [1,2]]);
