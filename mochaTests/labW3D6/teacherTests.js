@@ -21,7 +21,7 @@ describe("test inheritance from Person", function () {
         const bob = new Teacher();
         bob.initialize("Bob", 25);
         assert.strictEqual(bob.teach("Physics"), "Bob is now teaching Physics");
-    });
+    }); 
 
 });
 
