@@ -27,7 +27,12 @@ const john = new Student();
 john.initialize("John", 25);
 console.log(john.learn("Inheritance"));
 
+const Teacher = function() {};
+Teacher.prototype = new Person();
 
+Teacher.prototype.teach = function(subject){
+    return (this.name + " is now teaching " + subject);
+};
 
 
 

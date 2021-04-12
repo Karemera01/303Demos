@@ -10,7 +10,7 @@ const Student = myExports.Student;  //do this for all of the functions used in t
 const Teacher = myExports.Teacher; 
 
 
-describe("test inheritance from Person", function () {
+describe("test inheritance from Person", function () { 
 
     it("student inheritance", function () {
         const john = new Student();
