@@ -18,4 +18,4 @@ for (const trans of this.transactionsDB) {
 total += this.getBalance(trans.customerId);
 }
 return total;
-};
+}; 
